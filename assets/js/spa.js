@@ -6,5 +6,14 @@ angular.module("Platzi").controller("BaseCtrl", [
       $scope.emojis = data;
       $scope.$apply();
     });
+
+    io.socket.on("emoji", event => {
+      switch (event.verb) {
+        case "created":
+          $scope.emojis.push(event.data);
+          $scope.$apply();
+          break;
+      }
+    });
   }
 ]);

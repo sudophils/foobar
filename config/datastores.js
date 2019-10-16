@@ -47,6 +47,6 @@ module.exports.datastores = {
      ***************************************************************************/
     adapter: "sails-mongo",
     url:
-      "mongodb://heroku_zlm03q17:heroku_zlm03q17@ds235658.mlab.com:35658/heroku_zlm03q17"
+      "mongodb://heroku_zlm03q17:4lbvi11undhim3tklsupodiebq@ds235658.mlab.com:35658/heroku_zlm03q17"
   }
 };

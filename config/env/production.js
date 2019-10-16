@@ -107,7 +107,7 @@ module.exports = {
    *                                                                         *
    ***************************************************************************/
   blueprints: {
-    shortcuts: false
+    shortcuts: true
   },
 
   /***************************************************************************
@@ -134,7 +134,7 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     cors: {
-      allowOrigins: ["https://emophils.herokuapp.com"]
+      // allowOrigins: ["https://emophils.herokuapp.com"]
     }
   },
 

@@ -134,9 +134,7 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allowOrigins: ["https://emophils.herokuapp.com"]
     }
   },
 

@@ -45,7 +45,7 @@ module.exports = {
      ***************************************************************************/
     default: {
       adapter: "sails-mongo",
-      url: process.env.DATABASE_URI,
+      url: process.env.MONGODB_URI
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.
@@ -67,7 +67,7 @@ module.exports = {
        * https://sailsjs.com/config/datastores                                     *
        *                                                                           *
        ****************************************************************************/
-      ssl: true
+      // ssl: true
     }
   },
 
@@ -107,7 +107,8 @@ module.exports = {
    *                                                                         *
    ***************************************************************************/
   blueprints: {
-    shortcuts: true
+    shortcuts: true,
+    rest: true
   },
 
   /***************************************************************************
@@ -224,10 +225,7 @@ module.exports = {
      * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
      *                                                                          *
      ***************************************************************************/
-    onlyAllowOrigins: [
-      "https://emophils.herokuapp.com"
-      //   'https://staging.example.com',
-    ]
+    onlyAllowOrigins: ["https://emophils.herokuapp.com"]
     /***************************************************************************
      *                                                                          *
      * If you are deploying a cluster of multiple servers and/or processes,     *
@@ -271,7 +269,7 @@ module.exports = {
      * (the "max-age" to include in the "Cache-Control" response header)        *
      *                                                                          *
      ***************************************************************************/
-    cache: 365.25 * 24 * 60 * 60 * 1000, // One year
+    cache: 365.25 * 24 * 60 * 60 * 1000 // One year
 
     /***************************************************************************
      *                                                                          *
@@ -288,7 +286,7 @@ module.exports = {
      * (https://sailsjs.com/config/http)                                        *
      *                                                                          *
      ***************************************************************************/
-    trustProxy: true
+    // trustProxy: true
   },
 
   /**************************************************************************

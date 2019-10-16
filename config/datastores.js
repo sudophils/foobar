@@ -45,8 +45,7 @@ module.exports.datastores = {
      *    (See https://sailsjs.com/config/datastores for help.)                 *
      *                                                                          *
      ***************************************************************************/
-    adapter: "sails-mongo",
-    url: process.env.DATABASE_URL
+    // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
   }
 };

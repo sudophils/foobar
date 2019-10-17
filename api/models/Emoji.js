@@ -10,6 +10,10 @@ module.exports = {
     text: {
       //eg. : )
       type: "string"
+    },
+    // every emoji belongs to a particular user
+    owner: {
+      model: "User"
     }
   }
 };

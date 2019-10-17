@@ -18,11 +18,20 @@
   <body>
     <div ng-app="Platzi" ng-controller="BaseCtrl">
       <h2><%= user.screenName %></h2>
+
       <ul>
-        <li ng-repeat="emoji  in emojis">
+        <!-- <li ng-repeat="emoji  in emojis">
           <span>{{ emoji.text }}</span>
-        </li>
+        </li> -->
+
+        <% _.each(emojis, function(emoji){%>
+        <li><%= emoji.text %></li>
+        <% }) %>
       </ul>
+
+      <% if(!session.me){%>
+      <a href="<%twitterLoginUrl%>">Login with Twitter</a>
+      <%}%>
     </div>
   </body>
 </html>

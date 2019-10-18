@@ -10,7 +10,7 @@
  */
 
 module.exports.session = {
-  adapter: "connect-redis",
+  // adapter: "connect-redis",
   host: "barb.redistogo.com",
   port: 10079,
   user: "redistogo",

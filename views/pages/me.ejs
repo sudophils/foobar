@@ -24,9 +24,11 @@
               <!-- if session is set check before displaying profile -->
               <% if(session.me){%>
 
+              <h1>You are logged in</h1>
+
               <div
                 class="col-md-4"
-                style="background: url('<%= banner %>'); background-size: cover;"
+                style="background: url('<%= userdetail.banner %>'); background-size: cover;"
               >
                 <div class="photo">
                   <img src="<%= photo %>" alt="" />
@@ -34,7 +36,7 @@
               </div>
               <div class="col-md-4">
                 <h1><%= userdetail.name %></h1>
-                <h5><strong><%= userdetail.hanle %></strong></h5>
+                <h5><strong><%= userdetail.handle %></strong></h5>
                 <h4><%= userdetail.desc %></h4>
                 <h5><%= userdetail.location %></h5>
               </div>

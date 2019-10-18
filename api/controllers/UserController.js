@@ -9,7 +9,17 @@ module.exports = {
   //GET  /user/whoami
 
   whoami: function(req, res) {
-    return res.view("pages/me", {
+    // const userdetail = {
+    //   handle: req.session.me.handle,
+    //   photo: req.session.me.photo,
+    //   banner: req.session.me.banner,
+    //   location: req.session.me.location,
+    //   desc: req.session.me.desc,
+    //   verified: req.session.me.verified,
+    //   followers: req.session.me.followers
+    // };
+    //sails.log.debug(userdetail);
+    return res.json({
       userdetail: req.session.me
     });
   },

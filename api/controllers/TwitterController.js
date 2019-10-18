@@ -44,7 +44,7 @@ module.exports = {
           // OK.
           success: function(result) {
             req.session.me = accessTokenMetadata.screenName;
-            return res.ok("logged in");
+            return res.ok();
           }
         });
       }

@@ -20,33 +20,6 @@ module.exports = {
   findOne: function(req, res) {
     let twitterLoginUrl;
 
-    // const logUrl = await Twitter.getLoginUrl({
-    //   consumerKey: sails.config.twitter.consumerKey,
-    //   consumerSecret: sails.config.twitter.consumerSecret,
-    //   callbackUrl: sails.config.twitter.callbackUrl
-    // });
-
-    // if (!logUrl) {
-    //   throw new Error("error occured login in");
-    // }
-
-    // const user = await User.findOne({ screenName: req.param("screenName") });
-
-    // if (!user) {
-    //   res.status(404).json({ err: "no user found" });
-    // }
-
-    // const emojis = await Emoji.find({ owner: user.id });
-    // if (!emojis) {
-    //   res.status(404).json({ err: "no user found" });
-    // }
-
-    // return res.view("pages/profile", {
-    //   user: user,
-    //   emojis: emojis,
-    //   twitterLoginUrl: twitterLoginUrl
-    // });
-
     Twitter.getLoginUrl({
       consumerKey: sails.config.twitter.consumerKey,
       consumerSecret: sails.config.twitter.consumerSecret,

@@ -28,7 +28,7 @@ module.exports.routes = {
     action: "whoami"
   },
 
-  "GET /profile/:screenName": {
+  "GET /:screenName": {
     controller: "UserController",
     action: "findOne"
   }

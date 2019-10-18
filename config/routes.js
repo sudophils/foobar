@@ -23,7 +23,7 @@ module.exports.routes = {
     action: "handleLogin"
   },
 
-  "GET /me": {
+  "/": {
     controller: "UserController",
     action: "whoami"
   },

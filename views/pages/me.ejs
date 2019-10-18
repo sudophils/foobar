@@ -7,10 +7,10 @@
     <title>Sailing on node</title>
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/styles/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/importer.css" />
     <!--STYLES END-->
 
     <!--SCRIPTS END-->
@@ -21,6 +21,9 @@
         <div class="col-md-12">
           <div class="jumbotron">
             <div class="row">
+              <!-- if session is set check before displaying profile -->
+              <% if(!session.me){%>
+
               <div
                 class="col-md-4"
                 style="background: url('<%= banner %>'); background-size: cover;"
@@ -39,10 +42,13 @@
                 <h4>followers: <%= followers %></h4>
                 <h4>verifed: <%= verifed %></h4>
               </div>
+              <!-- end of seesion check -->
+              <%} else {%>
+
+              <h1>You are not logged in</h1>
+
+              <%}%>
             </div>
-            <% if(!session.me){%>
-            <img src="" alt="" />
-            <%}%>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@
           <div class="jumbotron">
             <div class="row">
               <!-- if session is set check before displaying profile -->
-              <% if(!session.me){%>
+              <% if(session.me){%>
 
               <div
                 class="col-md-4"
@@ -33,19 +33,21 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <h1><%= name %></h1>
-                <h5><strong><%= hanle %></strong></h5>
-                <h4><%= desc %></h4>
-                <h5><%= location %></h5>
+                <h1><%= userdetail.name %></h1>
+                <h5><strong><%= userdetail.hanle %></strong></h5>
+                <h4><%= userdetail.desc %></h4>
+                <h5><%= userdetail.location %></h5>
               </div>
               <div class="col-md-4">
-                <h4>followers: <%= followers %></h4>
-                <h4>verifed: <%= verifed %></h4>
+                <h4>followers: <%= userdetail.followers %></h4>
+                <h4>verifed: <%= userdetail.verifed %></h4>
               </div>
               <!-- end of seesion check -->
               <%} else {%>
 
-              <h1>You are not logged in</h1>
+              <div class="col-md-12">
+                <h1 class="text-center text-info">You are not logged in</h1>
+              </div>
 
               <%}%>
             </div>

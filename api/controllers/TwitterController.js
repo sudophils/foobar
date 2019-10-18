@@ -54,7 +54,7 @@ module.exports = {
               verified: accessTokenMetadata.isVerified
             };
             req.session.me = accessTokenMetadata.followersCount;
-            return res.ok();
+            return res.ok(data);
           }
         });
       }

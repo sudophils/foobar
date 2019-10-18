@@ -7,39 +7,41 @@
     <title>Sailing on node</title>
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/styles/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/importer.css" />
     <!--STYLES END-->
 
     <!--SCRIPTS END-->
   </head>
   <body>
-    <div class="card-body offset-md-3" ng-app="Platzi" ng-controller="BaseCtrl">
-      <h2 class="text-info"><%= user.screenName %> Profile</h2>
-      <% if(!session.me){%>
-      <a href="<%= twitterLoginUrl %>">Login with Twitter</a>
-      <%}%>
-
-      <ul>
-        <div class="card col-6">
-          <div class="card-body">
-            <h3>All Emojis</h3>
-            <ul class="list-group">
-              <li
-                class="list-group-item text-center"
-                ng-repeat="emoji  in emojis"
-              >
-                <span>{{ emoji.text }}</span>
-              </li>
-            </ul>
-          </div>
+    <div class="container" ng-app="Platzi" ng-controller="BaseCtrl">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-info"><%= user.screenName %> Profile</h2>
+          <% if(!session.me){%>
+          <a href="<%= twitterLoginUrl %>">Login with Twitter</a>
+          <%}%>
+        </div>
+      </div>
+      <div class="row"></div>
+      <div class="card-body ">
+        <h3>All Emojis</h3>
+        <div class="card-body">
+          <ul class="list-group">
+            <li
+              class="list-group-item text-center"
+              ng-repeat="emoji  in emojis"
+            >
+              <span>{{ emoji.text }}</span>
+            </li>
+          </ul>
         </div>
 
         <h3>Emojis by <%= user.screenName %></h3>
         <% _.each(emojis, function(emoji){%>
-        <div class="card col-6">
+        <div class="card ">
           <div class="card-body">
             <ul class="list-group">
               <li class="list-group-item text-center"><%= emoji.text %></li>
@@ -48,7 +50,7 @@
         </div>
 
         <% }) %>
-      </ul>
+      </div>
     </div>
   </body>
 </html>

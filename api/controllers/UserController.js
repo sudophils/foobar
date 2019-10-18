@@ -20,7 +20,7 @@ module.exports = {
     // };
     //sails.log.debug(userdetail);
     return res.json({
-      data: req.session.data
+      me: req.session.me
     });
   },
 
@@ -58,7 +58,7 @@ module.exports = {
           //   User.subscribe(req, user.id);
 
           if (!user) {
-            res.status(404).json({ err: "no user found" });
+            res.notFound();
           }
           // find all the imogis that belongs to this user
           Emoji.find({ owner: user.id }).exec(function(err, emojis) {
@@ -73,6 +73,15 @@ module.exports = {
           });
         });
       }
+    });
+  },
+  findall: function(req, res) {
+    User.find().exec((err, users) => {
+      if (err) {
+        res.notFound();
+      }
+
+      return res.status(200).json(users);
     });
   }
 };

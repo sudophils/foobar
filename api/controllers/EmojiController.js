@@ -14,14 +14,21 @@ module.exports = {
         if (err) {
           return res.status(400).json("No user found");
         }
-        return res
-          .status(200)
-          .json({
-            ok: `You have successfully made ${req.param(
-              "owner"
-            )} the owner of the imoji ${req.param("id")}`
-          });
+        return res.status(200).json({
+          ok: `You have successfully made ${req.param(
+            "owner"
+          )} the owner of the imoji ${req.param("id")}`
+        });
       }
     );
+  },
+  find: function(req, res) {
+    Emoji.find().exec(function(err, emojis) {
+      if (err) {
+        return res.notFound();
+      }
+
+      return res.status(200).json(emojis);
+    });
   }
 };

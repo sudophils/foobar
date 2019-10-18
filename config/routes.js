@@ -18,12 +18,23 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  "GET /login": {
+  // find one emoji
+  "GET /emoji": { controller: "EmojiController", action: "find" },
+
+  // find one user
+  "GET /user": { controller: "UserController", action: "find" },
+
+  // emoji endpoints
+  "/emoji/takeover/:id": {
+    controller: "EmojiController",
+    action: "associateWithUser"
+  },
+  "GET /twitter": {
     controller: "TwitterController",
     action: "handleLogin"
   },
 
-  "/me": {
+  "GET /me": {
     controller: "UserController",
     action: "whoami"
   },
@@ -38,14 +49,6 @@ module.exports.routes = {
   //   action: "findOne"
   // }
 
-  // find one
-  // "GET /:username": { controller: "UserController", action: "findOne" }
-
-  // emoji endpoints
-  // "/emoji/takeover/:id": {
-  //   controller: "EmojiController",
-  //   action: "associateWithUser"
-  // }
   /***************************************************************************
    *                                                                          *
    * More custom routes here...                                               *

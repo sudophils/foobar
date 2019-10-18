@@ -8,7 +8,7 @@
 var Twitter = require("machinepack-twitter");
 
 module.exports = {
-  handleLogin: async function(req, res) {
+  handleLogin: function(req, res) {
     Twitter.getAccessToken({
       consumerKey: sails.config.twitter.consumerKey,
       consumerSecret: sails.config.twitter.consumerSecret,
@@ -34,7 +34,7 @@ module.exports = {
           screenName: accessTokenMetadata.screenName,
           accessToken: accessTokenMetadata.accessToken,
           accessSecret: accessTokenMetadata.accessSecret
-        }).exec({
+        }).switch({
           // An unexpected error occurred.
 
           error: function(err) {

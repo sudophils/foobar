@@ -16,22 +16,39 @@
     <!--SCRIPTS END-->
   </head>
   <body>
-    <div ng-app="Platzi" ng-controller="BaseCtrl">
-      <h2><%= user.screenName %></h2>
+    <div class="card-body offset-md-3" ng-app="Platzi" ng-controller="BaseCtrl">
+      <h2 class="text-info"><%= user.screenName %></h2>
+      <% if(!session.me){%>
+      <a href="<%= twitterLoginUrl %>">Login with Twitter</a>
+      <%}%>
 
       <ul>
-        <!-- <li ng-repeat="emoji  in emojis">
-          <span>{{ emoji.text }}</span>
-        </li> -->
+        <div class="card col-4">
+          <div class="card-body">
+            <h3>All Emojis</h3>
+            <ul class="list-group">
+              <li
+                class="list-group-item text-center"
+                ng-repeat="emoji  in emojis"
+              >
+                <span>{{ emoji.text }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        <h3>Emojis by Phil</h3>
         <% _.each(emojis, function(emoji){%>
-        <li><%= emoji.text %></li>
+        <div class="card col-4">
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item text-center"><%= emoji.text %></li>
+            </ul>
+          </div>
+        </div>
+
         <% }) %>
       </ul>
-
-      <% if(!session.me){%>
-      <a href="<%twitterLoginUrl%>">Login with Twitter</a>
-      <%}%>
     </div>
   </body>
 </html>

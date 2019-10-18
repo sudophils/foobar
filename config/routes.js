@@ -33,6 +33,11 @@ module.exports.routes = {
     action: "findOne"
   }
 
+  // "/": {
+  //   controller: "UserController",
+  //   action: "findOne"
+  // }
+
   // find one
   // "GET /:username": { controller: "UserController", action: "findOne" }
 

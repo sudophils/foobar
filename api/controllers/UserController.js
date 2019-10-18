@@ -9,8 +9,15 @@ module.exports = {
   //GET  /user/whoami
 
   whoami: function(req, res) {
-    return res.json({
-      me: req.session.me
+    return res.view("pages/me", {
+      handle: req.session.me.handle,
+      banner: req.session.me.banner,
+      photo: req.session.me.photo,
+      name: req.session.me.name,
+      location: req.session.me.location,
+      desc: req.session.me.description,
+      followers: req.session.me.followers,
+      verified: req.session.me.verified
     });
   },
 

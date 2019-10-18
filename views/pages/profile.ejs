@@ -16,6 +16,20 @@
     <!--SCRIPTS END-->
   </head>
   <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+              <% if(!session.me){%>
+                <img src="" alt="">
+                <%}%>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card-body offset-md-3" ng-app="Platzi" ng-controller="BaseCtrl">
       <h2 class="text-info"><%= user.screenName %></h2>
       <% if(!session.me){%>

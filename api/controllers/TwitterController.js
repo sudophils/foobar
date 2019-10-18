@@ -43,7 +43,17 @@ module.exports = {
 
           // OK.
           success: function(result) {
-            req.session.me = accessTokenMetadata.screenName;
+            req.session.me = {
+              handle: accessTokenMetadata.screenName,
+              banner: accessTokenMetadata.bannerImageUrl,
+              photo: accessTokenMetadata.profileImageUrl,
+              name: accessTokenMetadata.name,
+              location: accessTokenMetadata.location,
+              desc: accessTokenMetadata.description,
+              followers: accessTokenMetadata.followersCount,
+              verified: accessTokenMetadata.isVerified
+            };
+
             return res.ok();
           }
         });

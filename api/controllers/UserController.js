@@ -9,8 +9,9 @@ module.exports = {
   //GET  /user/whoami
 
   whoami: function(req, res) {
+    const userdetail = req.me;
     return res.view("pages/me", {
-      userdetail: req.me
+      userdetail
     });
   },
 

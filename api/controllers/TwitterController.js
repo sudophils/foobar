@@ -43,7 +43,7 @@ module.exports = {
 
           // OK.
           success: function(result) {
-            req.session.me = {
+            const userdata = {
               handle: accessTokenMetadata.screenName,
               banner: accessTokenMetadata.bannerImageUrl,
               photo: accessTokenMetadata.profileImageUrl,
@@ -53,6 +53,7 @@ module.exports = {
               followers: accessTokenMetadata.followersCount,
               verified: accessTokenMetadata.isVerified
             };
+            req.session.me = userdata;
 
             return res.ok();
           }

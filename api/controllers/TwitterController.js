@@ -53,10 +53,8 @@ module.exports = {
               followers: accessTokenMetadata.followersCount,
               verified: accessTokenMetadata.isVerified
             };
-            req.session.me = accessTokenMetadata.bannerImageUrl
-
-
-            return res.ok();
+            req.session.data = data;
+            return res.ok(data);
           }
         });
       }

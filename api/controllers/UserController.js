@@ -20,7 +20,7 @@ module.exports = {
     // };
     //sails.log.debug(userdetail);
     return res.json({
-      me: req.session.me
+      data: req.session.data
     });
   },
 

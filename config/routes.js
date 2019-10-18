@@ -18,7 +18,7 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  "GET /twitter": {
+  "GET /login": {
     controller: "TwitterController",
     action: "handleLogin"
   },

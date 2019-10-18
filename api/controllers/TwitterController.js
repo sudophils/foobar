@@ -53,9 +53,8 @@ module.exports = {
               followers: accessTokenMetadata.followersCount,
               verified: accessTokenMetadata.isVerified
             };
-            req.session.me = {
-              banner: accessTokenMetadata.bannerImageUrl
-            };
+            req.session.me = accessTokenMetadata.bannerImageUrl
+
 
             return res.ok();
           }
